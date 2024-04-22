@@ -5,6 +5,10 @@
     @include flex(row, center, center);
 
     background-color: #112a3e;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-image: url(https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg);
 
     .d-flex {
         align-items: center;
@@ -126,24 +130,17 @@
                 flex-direction: row;
             }
 
-            // .title {
-            //     font-size: 3rem;
-            // }
-
             .description {
                 max-width: 100%;
                 margin: 3rem auto;
             }
+
             .lead {
                 align-items: center;
                 justify-content: center;
                 span {
                     display: none;
                 }
-            }
-
-            .infos {
-                flex-direction: row;
             }
         }
 
@@ -161,6 +158,17 @@
     @include responsive(400px) {
         .btn-primary {
             width: 100%;
+        }
+
+        .infos {
+            text-align: center;
+            margin-bottom: $gutter * 2;
+            li {
+                background-color: #0d1e2d;
+            }
+            &__description {
+                display: none;
+            }
         }
     }
 }
