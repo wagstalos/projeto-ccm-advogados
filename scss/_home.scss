@@ -1,0 +1,166 @@
+.s-hero {
+    width: 100%;
+    padding-top: 8rem;
+    height: 100vh;
+    @include flex(row, center, center);
+
+    background-color: #112a3e;
+
+    .d-flex {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .btn-primary {
+        svg {
+            transition: transform 0.3s ease;
+        }
+
+        &:hover {
+            svg {
+                transform: translateX(8px);
+            }
+        }
+    }
+
+    &__text {
+        margin-bottom: 3.9rem;
+        width: 50%;
+
+        .lead {
+            display: flex;
+            align-items: center;
+            color: $brand-red;
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+
+        .title {
+            font-size: 4.5rem;
+            line-height: 120%;
+            font-weight: 600;
+
+            color: $white;
+            max-width: 74rem;
+        }
+
+        .description {
+            max-width: 50rem;
+            margin-top: 3.4rem;
+            margin-bottom: 4rem;
+            font-weight: 400;
+            font-size: 1.8rem;
+            line-height: 150%;
+            color: $white;
+            opacity: 0.8;
+        }
+    }
+
+    &__image {
+        // margin: 0 auto;
+        width: 45%;
+
+        img {
+            border-radius: 10px;
+        }
+    }
+
+    .infos {
+        max-width: 50%;
+        margin-top: $gutter * 4;
+
+        li {
+            border: 1px solid #133651;
+            padding: 9px;
+            transition: all 0.3 ease-in;
+            flex: 1;
+            margin-right: 16px;
+
+            &:hover {
+                background-color: #0d1e2d;
+            }
+        }
+
+        &__title {
+            color: $brand-red;
+            font-size: 2.5rem;
+        }
+
+        &__description {
+            font-size: 1.5rem;
+            color: $white;
+        }
+    }
+
+    @include responsive(1024px) {
+        &__text {
+            .title {
+                font-size: 4rem;
+                line-height: 110%;
+            }
+        }
+
+        .infos {
+            max-width: 70%;
+            margin-left: 15%;
+        }
+    }
+
+    @include responsive(800px) {
+        padding-top: 12rem;
+        height: auto;
+
+        .d-flex {
+            flex-direction: column;
+        }
+
+        &__text {
+            text-align: center;
+            width: 100%;
+
+            .btn-primary {
+                margin: 0 auto;
+                // width: 80%;
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+            }
+
+            // .title {
+            //     font-size: 3rem;
+            // }
+
+            .description {
+                max-width: 100%;
+                margin: 3rem auto;
+            }
+            .lead {
+                align-items: center;
+                justify-content: center;
+                span {
+                    display: none;
+                }
+            }
+
+            .infos {
+                flex-direction: row;
+            }
+        }
+
+        &__image {
+            width: 100%;
+        }
+
+        .infos {
+            max-width: 100%;
+            margin-left: 0;
+            flex-direction: row;
+        }
+    }
+
+    @include responsive(400px) {
+        .btn-primary {
+            width: 100%;
+        }
+    }
+}
